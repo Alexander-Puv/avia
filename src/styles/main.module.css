@@ -1,0 +1,45 @@
+.main {
+    max-width: 962px;
+    width: 100%;
+    margin-top: 68px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--main-blue);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.searchBtn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 23px 29px;
+}
+
+.searchBtn button {
+    position: relative;
+    height: 40px;
+    width: 158px;
+    background: var(--main-blue) !important;
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.searchBtn button:hover {
+    background: var(--secondary-blue);
+}
+
+.isWrongFilled {
+    position: absolute !important;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    color: red;
+}

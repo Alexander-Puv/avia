@@ -1,0 +1,28 @@
+.inputParent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputParent label {
+    font-size: 11px;
+    line-height: 13px;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.input {
+    width: 208px;
+}
+
+.autoComplete div,
+.datePicker {
+    height: 40px !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.autoComplete span {
+    display: flex;
+    align-items: center;
+}
