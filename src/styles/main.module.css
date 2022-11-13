@@ -27,7 +27,7 @@
     position: relative;
     height: 40px;
     width: 158px;
-    background: var(--main-blue) !important;
+    background: var(--main-blue);
     border-radius: var(--border-radius);
     border: none;
 }
@@ -36,10 +36,7 @@
     background: var(--secondary-blue);
 }
 
-.isWrongFilled {
-    position: absolute !important;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -20px;
-    color: red;
+.searchBtn button:disabled {
+    background: var(--gray-color) !important;
+    color: white !important;
 }

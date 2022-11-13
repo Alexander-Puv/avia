@@ -1,0 +1,181 @@
+.card {
+    max-width: 980px;
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 0px 14px rgba(112, 121, 153, 0.3);
+    border-radius: 15px;
+}
+
+.cardThere,
+.cardBackAndThere {
+    max-width: 790px;
+    width: 100%;
+    display: flex;
+}
+
+.cardThere {
+    height: 200px;
+}
+
+.cardBackAndThere {
+    flex-direction: column;
+}
+
+.cardLeftSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.sticker {
+    width: 132px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: var(--sticker-blue);
+    border-radius: 15px 0;
+}
+
+.company {
+    margin: 30px auto 41px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.company img {
+    height: 39px;
+    width: 39px;
+}
+
+.cardCenter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.flightTime {
+    display: flex;
+}
+
+.time {
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+.time h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin: auto 0 8px;
+}
+.time h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.path {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 56px 40px 0;
+    color: var(--gray-color);
+}
+
+.travelRoute {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    line-height: 140%;
+}
+.travelRoute div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.travelRoute p {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.round {
+    height: 8px;
+    width: 8px;
+    background: var(--gray-color);
+    border-radius: 50%;
+}
+.travelLine {
+    align-self: center;
+    height: 0;
+    width: 100%;
+    border: 1px solid var(--gray-color);
+}
+
+.travelTime {
+    align-self: center;
+    margin-top: 4px;
+}
+
+.timeSelection {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+.timeBtn {
+    height: 34px;
+    width: 107px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    font-weight: 500;
+    border: 1px solid #B7BAC1;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+.timeBtn h2 {
+    font-size: 18px;
+    line-height: 21px;
+}
+.selected {
+    height: 40px;
+    width: 130px;
+    color: #232323;
+    background: #DDE3EE;
+    border: none;
+}
+
+.cardRightSide {
+    height: 110px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+.cardRightSide div {
+    display: flex;
+    gap: 10px;
+}
+
+.delimiter {
+    height: 100%;
+    margin-left: auto;
+    border: 1px solid #DDE3EE;
+}
+
+.line {
+    width: 100%;
+    border: 1px dashed var(--main-blue);
+}
+
+.price {
+    margin: auto;
+}

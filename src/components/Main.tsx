@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/context'
 import s from '../styles/main.module.css'
@@ -13,15 +13,19 @@ const options: AutoCompleteOptions[] = [
 ]
 
 const Main = () => {
-    const [isWrongFilled, setIsWrongFilled] = useState(false)
+    const [isWrongFilled, setIsWrongFilled] = useState(true)
     const context = useContext(AppContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        !isWrong() ? setIsWrongFilled(false) : setIsWrongFilled(true)
+    }, [context])
 
     let isFromRight: boolean;
     let isFromRightTrue: boolean;
     let isToRight: boolean;
     let isToRightTrue: boolean;
-    const onClick = () => {
+    const isWrong = () => {
         for (let i = 0; i < options.length; i++) {
             isFromRight = context?.fromWhere === options[i].value;
             isFromRightTrue = isFromRightTrue ? isFromRightTrue : isFromRight;
@@ -30,10 +34,13 @@ const Main = () => {
             isToRightTrue = isToRightTrue ? isToRightTrue : isToRight;
         }
         
-        isFromRightTrue && context?.thereDate &&
-        (!context.toWhere ? !context.backDate : (isToRightTrue && context.backDate)) ?
-        navigate('/avia/info')
-        : setIsWrongFilled(true)
+        return isFromRightTrue && context?.thereDate && context.toWhere
+        //(!context.toWhere ? !context.backDate : (isToRightTrue && context.backDate))
+        ? false : true
+    }
+
+    const onClick = () => {
+        !isWrong() && navigate('/avia/info')
     }
 
     return (
@@ -45,11 +52,9 @@ const Main = () => {
                 <MainDatePicker when='Обратно' />
             </section>
             <section className={s.searchBtn}>
-                <Button type='primary' onClick={onClick}>
+                <Button type='primary' onClick={onClick} disabled={isWrongFilled}>
                     Найти билеты
-                    {isWrongFilled && <span className={s.isWrongFilled}>Форма заполнена неправильно</span>}
                 </Button>
-                
             </section>
         </main>
     )

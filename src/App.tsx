@@ -10,7 +10,7 @@ function App() {
     const [toWhere, setToWhere] = useState('');
     const [thereDate, setThereDate] = useState('19.11.22');
     const [backDate, setBackDate] = useState('');
-    const [isRightDate, setIsRightDate] = useState(false)
+    const [isRightDate, setIsRightDate] = useState(false);
 
     return (
         <AppContext.Provider value={{
@@ -24,7 +24,7 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path='/avia' element={<Main />} />
-                        <Route path='/avia/info' element={<Info />} />
+                        {fromWhere && <Route path='/avia/info' element={<Info />} />}
                         <Route path='*' element={<Navigate to='/avia' replace={true} />} />
                     </Routes>
                 </BrowserRouter>
